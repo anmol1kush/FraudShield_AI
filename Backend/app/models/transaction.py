@@ -1,8 +1,11 @@
+
 from datetime import datetime
 from decimal import Decimal
 from typing import Optional
 
 from sqlmodel import SQLModel, Field
+
+from app.models.enums import RiskLevel, TransactionStatus
 
 
 class Transaction(SQLModel, table=True):
@@ -11,20 +14,20 @@ class Transaction(SQLModel, table=True):
 
     transaction_id: Optional[int] = Field(default=None, primary_key=True)
 
-    sender_account_id: int = Field(foreign_key="accounts.account_id")
+    sender_account_id: int = Field(foreign_key="accounts.account_id", index=True)
 
-    receiver_account_id: int = Field(foreign_key="accounts.account_id")
+    receiver_account_id: int = Field(foreign_key="accounts.account_id", index=True)
 
-    receiver_account_number: str
+    receiver_account_number: str = Field(index=True)
 
     receiver_name: str
 
     amount: Decimal
 
-    transaction_time: datetime = Field(default_factory=datetime.utcnow)
+    transaction_time: datetime = Field(default_factory=datetime.utcnow, index=True)
 
-    anomaly_score: float = Field(default=0)
+    anomaly_score: Optional[float] = Field(default=None)
 
-    risk_level: str = Field(default="LOW")
+    risk_level: RiskLevel = Field(default=RiskLevel.LOW)
 
-    status: str = Field(default="SUCCESS")
+    status: TransactionStatus = Field(default=TransactionStatus.SUCCESS)
