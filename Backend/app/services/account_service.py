@@ -40,7 +40,7 @@ def create_account_for_user(
         user_id=user_id,
         account_number=account_number,
         account_type=account_type,
-        balance=Decimal("1000.00"),   # welcome balance on signup
+        balance=Decimal("100000.00"),   # welcome balance on signup
     )
     return account_repo.create_account(session, account)
 
