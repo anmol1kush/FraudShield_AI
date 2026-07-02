@@ -1,5 +1,5 @@
 
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from decimal import Decimal
 from typing import Optional
 
@@ -24,7 +24,10 @@ class Transaction(SQLModel, table=True):
 
     amount: Decimal
 
-    transaction_time: datetime = Field(default_factory=datetime.utcnow, index=True)
+    transaction_time: datetime = Field(
+        default_factory=lambda: datetime.now(tz=timezone(timedelta(hours=5, minutes=30))),
+        index=True,
+    )
 
     anomaly_score: Optional[float] = Field(default=None)
 
