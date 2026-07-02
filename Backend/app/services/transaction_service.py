@@ -108,7 +108,7 @@ async def transfer_money(
     # Rule: if this sender account has already made >3 transactions in the
     # last 60 seconds, block immediately without calling the ML model.
     RAPID_FIRE_LIMIT = 2
-    RAPID_FIRE_WINDOW = 60  # seconds
+    RAPID_FIRE_WINDOW = 120  # seconds
     recent_count = transaction_repo.count_recent_sender_transactions(
         session,
         sender_account_id=sender_account.account_id,
