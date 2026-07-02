@@ -25,9 +25,13 @@ class Transaction(SQLModel, table=True):
     amount: Decimal
 
     transaction_time: datetime = Field(
+<<<<<<< HEAD
+        default_factory=lambda: datetime.now(tz=timezone(timedelta(hours=5, minutes=30))),
+=======
         default_factory=lambda: datetime.now(
             tz=timezone(timedelta(hours=5, minutes=30))
         ).replace(tzinfo=None),
+>>>>>>> d531b218523e3fd07eb241aa1592a816ec71fca6
         index=True,
     )
 

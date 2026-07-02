@@ -1,0 +1,526 @@
+/* ===========================
+   PAGE
+=========================== */
+
+.transfer-page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#f4f7fb;
+
+    padding:40px;
+
+    box-sizing:border-box;
+
+}
+
+
+/* ===========================
+   CARD
+=========================== */
+
+.transfer-card{
+
+    width:100%;
+
+    max-width:650px;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:45px;
+
+    box-shadow:0 15px 45px rgba(0,0,0,.08);
+
+}
+
+
+.transfer-card h1{
+
+    margin:0;
+
+    text-align:center;
+
+    font-size:40px;
+
+    color:#18233d;
+
+    font-weight:700;
+
+}
+
+
+.transfer-card p{
+
+    text-align:center;
+
+    color:#64748b;
+
+    margin:12px 0 35px;
+
+    font-size:18px;
+
+}
+
+
+/* ===========================
+   FORM
+=========================== */
+
+.form-group{
+
+    margin-bottom:24px;
+
+}
+
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    color:#475569;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    letter-spacing:.05em;
+
+    text-transform:uppercase;
+
+}
+
+
+.form-group input{
+
+    width:100%;
+
+    height:58px;
+
+    border:1px solid #d7dce5;
+
+    border-radius:12px;
+
+    padding:0 18px;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.25s;
+
+    box-sizing:border-box;
+
+}
+
+
+.form-group input:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+
+}
+
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.transfer-btn{
+
+    width:100%;
+
+    height:60px;
+
+    margin-top:12px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(90deg,#1d4ed8,#2563eb);
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+
+.transfer-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 25px rgba(37,99,235,.35);
+
+}
+
+
+.transfer-btn:disabled{
+
+    opacity:.7;
+
+    cursor:not-allowed;
+
+}
+
+
+/* ===========================
+   MODAL
+=========================== */
+
+.modal-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:1000;
+
+    backdrop-filter:blur(4px);
+
+}
+
+
+/* ===========================
+   RESULT CARD
+=========================== */
+
+.result-modal{
+
+    width:100%;
+
+    max-width:520px;
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:35px;
+
+    text-align:center;
+
+    animation:popup .25s ease;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+
+}
+
+
+@keyframes popup{
+
+    from{
+
+        transform:scale(.85);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+
+/* ===========================
+   ICONS
+=========================== */
+
+.success-icon{
+
+    width:90px;
+
+    height:90px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:42px;
+
+    font-weight:bold;
+
+}
+
+
+.danger-icon{
+
+    width:90px;
+
+    height:90px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#ef4444;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:42px;
+
+    font-weight:bold;
+
+}
+
+
+.success-text{
+
+    color:#16a34a;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+
+.danger-text{
+
+    color:#dc2626;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+
+/* ===========================
+   SUMMARY
+=========================== */
+
+.transaction-summary{
+
+    margin-top:25px;
+
+    text-align:left;
+
+}
+
+
+.summary-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:14px 0;
+
+    border-bottom:1px solid #edf2f7;
+
+}
+
+
+.summary-row:last-child{
+
+    border-bottom:none;
+
+}
+
+
+/* ===========================
+   RISK BADGES
+=========================== */
+
+.risk{
+
+    color:white;
+
+    padding:5px 14px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+
+.risk.low{
+
+    background:#22c55e;
+
+}
+
+
+.risk.medium{
+
+    background:#f59e0b;
+
+}
+
+
+.risk.high{
+
+    background:#ef4444;
+
+}
+
+
+/* ===========================
+   REASON BOX
+=========================== */
+
+.reason-box{
+
+    margin-top:28px;
+
+    background:#fff7f7;
+
+    border:1px solid #fecaca;
+
+    border-radius:12px;
+
+    padding:18px;
+
+    text-align:left;
+
+}
+
+
+.reason-box h3{
+
+    margin-top:0;
+
+    color:#dc2626;
+
+}
+
+
+.reason-box ul{
+
+    padding-left:20px;
+
+}
+
+
+.reason-box li{
+
+    margin-bottom:10px;
+
+}
+
+
+/* ===========================
+   RULES
+=========================== */
+
+.rule-box{
+
+    margin-top:25px;
+
+    text-align:left;
+
+}
+
+
+.rule-container{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+
+.rule-chip{
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:8px 14px;
+
+    border-radius:25px;
+
+    font-size:13px;
+
+}
+
+
+/* ===========================
+   CLOSE BUTTON
+=========================== */
+
+.close-btn{
+
+    width:100%;
+
+    margin-top:35px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#18233d;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+
+.close-btn:hover{
+
+    background:#0f172a;
+
+}
